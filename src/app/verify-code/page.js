@@ -89,15 +89,6 @@ export default function VerifyCode(props) {
     const handleConfirm = () => {
         setIsModalOpen(false);
     };
-    if (!ticket_id) {
-        return (
-            <div className="justify-items-center min-h-screen">
-                <main className="flex flex-col row-start-2 items-center">
-                    <div>티켓 ID가 없습니다.</div>
-                </main>
-            </div>
-        )
-    }
     return (
         <div className="justify-items-center min-h-screen">
             <main className="flex flex-col row-start-2 items-center">
