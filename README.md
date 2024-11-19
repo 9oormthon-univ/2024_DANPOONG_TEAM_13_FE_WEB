@@ -22,6 +22,6 @@ Node & Npm 설치: https://joyfulhome.tistory.com/180
 실제링크: https://onjung.site/verify-code?ticked_id=123
 
 ### 5. 페이지
-<img src="https://github.com/user-attachments/assets/60372bd0-5814-4931-8ca7-3f90b5cbe8e7" width="320"/>
-<img src="https://github.com/user-attachments/assets/f09a9790-b367-432d-9c6c-a5b69d14fc6d" width="320"/>
-<img src="https://github.com/user-attachments/assets/111a59da-534d-466b-9187-8ee3a41f4ffe" width="320"/>
+<img src="https://github.com/user-attachments/assets/60372bd0-5814-4931-8ca7-3f90b5cbe8e7" width="32%"/>
+<img src="https://github.com/user-attachments/assets/f09a9790-b367-432d-9c6c-a5b69d14fc6d" width="32%"/>
+<img src="https://github.com/user-attachments/assets/111a59da-534d-466b-9187-8ee3a41f4ffe" width="32%"/>
