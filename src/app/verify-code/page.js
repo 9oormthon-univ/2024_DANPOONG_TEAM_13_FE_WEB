@@ -1,16 +1,15 @@
 'use client';
-import {styles} from './useStyle';
-import PinCodePanel from "@/app/component/PinCodePanel/PinCodePanel";
-import Modal from "@/app/component/Modal/Modal";
-import {useState} from "react";
-import {useSearchParams} from "next/navigation";
-import {useTicketValidateMutation} from "@/app/api/mutations";
 
-export default function VerifyCode() {
-    const searchParams = useSearchParams();
+import {styles} from './useStyle';
+import PinCodePanel from "../../app/component/PinCodePanel/PinCodePanel";
+import Modal from "../../app/component/Modal/Modal";
+import {useState} from "react";
+import {useTicketValidateMutation} from "../api/mutations";
+
+export default function VerifyCode(props) {
     const correctCodeText = '사장님의 식권 사용 코드를 입력해 주세요.'
     const incorrectCodeText = '잘못된 코드입니다. 다시 입력해 주세요.'
-    const ticket_id = searchParams.get('ticket_id');
+    const ticket_id = props.searchParams.ticket_id;
     const [subText, setSubText] = useState(correctCodeText);
     const [isValid, setIsValid] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
