@@ -13,6 +13,7 @@ export default function VerifyCode(props) {
     const searchParams = useSearchParams()
     let ticket_id = searchParams.get('ticket_id') || '';
     ticket_id = ticket_id.replaceAll(' ', '+');
+    console.log(ticket_id)
     const [subText, setSubText] = useState(correctCodeText);
     const [isValid, setIsValid] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,6 +69,8 @@ export default function VerifyCode(props) {
         handleTicketValidateError
     )
     const handleCodeComplete = (code) => {
+        console.log(`ticket_id: ${ticket_id}`)
+        console.log(`code: ${code}`)
         ticketValidateMutation({
           hashed_ticket_id : ticket_id,
           password : code
