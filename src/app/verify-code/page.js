@@ -9,7 +9,7 @@ import {useTicketValidateMutation} from "../api/mutations";
 export default function VerifyCode(props) {
     const correctCodeText = '사장님의 식권 사용 코드를 입력해 주세요.'
     const incorrectCodeText = '잘못된 코드입니다. 다시 입력해 주세요.'
-    let ticket_id = props.searchParams.ticket_id;
+    let ticket_id = props.searchParams.ticket_id || '';
     ticket_id = ticket_id.replaceAll(' ', '+');
     const [subText, setSubText] = useState(correctCodeText);
     const [isValid, setIsValid] = useState(true);
@@ -72,18 +72,6 @@ export default function VerifyCode(props) {
           hashed_ticket_id : ticket_id,
           password : code
         })
-        // if (code === '111111') {
-        //     handleNetworkSuccess({ title: '인증 성공', message: '인증이 성공적으로 완료되었습니다.', icon: '/icon/ic_check.svg' })
-        // } else if (code === '222222') {
-        //     handleNetworkSuccess({ title: '인증 실패', message: '유효기간이 만료된 쿠폰입니다.', icon: '/icon/ic_warning.svg' })
-        // } else if (code === '333333') {
-        //     handleNetworkSuccess({ title: '인증 실패', message: '이미 사용된 쿠폰입니다.', icon: '/icon/ic_warning.svg' })
-        // } else {
-        //     setIsValid(false);
-        //     setSubText(incorrectCodeText)
-        //     setShake(true);
-        //     setTimeout(() => setShake(false), 500);
-        // }
     };
 
     const handleConfirm = () => {
