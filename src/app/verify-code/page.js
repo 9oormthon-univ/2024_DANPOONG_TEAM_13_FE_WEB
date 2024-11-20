@@ -5,11 +5,13 @@ import PinCodePanel from "../../app/component/PinCodePanel/PinCodePanel";
 import Modal from "../../app/component/Modal/Modal";
 import {useState} from "react";
 import {useTicketValidateMutation} from "../api/mutations";
+import {useSearchParams} from "next/navigation";
 
 export default function VerifyCode(props) {
     const correctCodeText = '사장님의 식권 사용 코드를 입력해 주세요.'
     const incorrectCodeText = '잘못된 코드입니다. 다시 입력해 주세요.'
-    let ticket_id = props.searchParams.ticket_id || '';
+    const searchParams = useSearchParams()
+    let ticket_id = searchParams.get('ticket_id') || '';
     ticket_id = ticket_id.replaceAll(' ', '+');
     const [subText, setSubText] = useState(correctCodeText);
     const [isValid, setIsValid] = useState(true);
@@ -66,8 +68,6 @@ export default function VerifyCode(props) {
         handleTicketValidateError
     )
     const handleCodeComplete = (code) => {
-        console.log(`ticket_id: ${ticket_id}`)
-        console.log(`code: ${code}`)
         ticketValidateMutation({
           hashed_ticket_id : ticket_id,
           password : code
