@@ -14,6 +14,7 @@ export default function VerifyCode() {
     let searchParams = useSearchParams()
     let ticket_id = searchParams.get('ticket_id') || '';
     ticket_id = ticket_id.replaceAll(' ', '+');
+    console.log(ticket_id)
     const [subText, setSubText] = useState(correctCodeText);
     const [isValid, setIsValid] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
