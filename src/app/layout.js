@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import {QueryClient, QueryClientProvider} from 'react-query';
 import "./globals.css";
 import { metadata } from './metadata';
-import { Suspense } from 'react';
 
 const pretendard = localFont({
     src: [
@@ -30,9 +29,7 @@ export default function RootLayout({ children }) {
                 <meta name="description" content={metadata.description} />
             </head>
             <body className={`${pretendard.variable} antialiased`}>
-                <Suspense fallback={<div>로딩 중...</div>}>
-                    {children}
-                </Suspense>
+                {children}
             </body>
             </html>
         </QueryClientProvider>
