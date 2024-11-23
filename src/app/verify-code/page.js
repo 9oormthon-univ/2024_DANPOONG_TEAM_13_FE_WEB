@@ -5,7 +5,7 @@ import PinCodePanel from "../../app/component/PinCodePanel/PinCodePanel";
 import Modal from "../../app/component/Modal/Modal";
 import {useEffect, useState} from "react";
 import {useTicketValidateMutation} from "../api/mutations";
-import {useSearchParams} from "next/navigation";
+import {useSearchParams, useRouter} from "next/navigation";
 export const dynamic = "force-dynamic";
 
 export default function VerifyCode() {
@@ -20,6 +20,8 @@ export default function VerifyCode() {
     const [modalContent, setModalContent] = useState({ title: '', message: '' });
     const [shake, setShake] = useState(false);
 
+    const router = useRouter();
+
     const handleTicketValidateSuccess = (data) => {
         if(!data.success) {
             /*올바르지 않은 사용 코드 입력*/
@@ -31,7 +33,7 @@ export default function VerifyCode() {
             /*일단 존재하는 코드*/
             if(data.data?.is_valid) {
                 /*유효한 코드*/
-                handleNetworkSuccess({ title: '인증 성공', message: '인증이 성공적으로 완료되었습니다.', icon: '/icon/ic_check.svg' })
+                router.push("/home");
             } else {
                 /*유효하지 않은 코드*/
                 const message = data.data?.reason ? data.data?.reason : "이미 사용된 쿠폰입니다."
