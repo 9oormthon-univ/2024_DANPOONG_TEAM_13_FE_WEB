@@ -5,7 +5,7 @@ import {styles} from '../component/Modal/useStyle';
 export default function Home() {
   return (
     <div 
-    className="flex justify-center items-center min-h-screen overflow-hidden"
+    className="flex justify-center items-center overflow-hidden"
       style={{ height: "100vh" }}
     >
             <main className="flex flex-col row-start-2 items-center">

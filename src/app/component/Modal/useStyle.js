@@ -31,7 +31,7 @@ export const styles = {
   success_title: {
     fontSize: '30px',
     fontWeight: '600',
-    marginBottom: '8px',
+    marginBottom: '12px',
     color: '#000',
   },
   message: {
@@ -41,7 +41,7 @@ export const styles = {
     marginBottom: '24px',
   },
   success_message: {
-    fontSize: '26px',
+    fontSize: '22px',
     color: '#666',
     lineHeight: '1.5',
     marginBottom: '24px',
@@ -70,6 +70,7 @@ export const styles = {
   success_icon: {
     width: '52px', // 아이콘 크기 조정
     height: '52px',
+    marginBottom: '8px'
   },
   b_10px: {
     marginBottom: '10px'
